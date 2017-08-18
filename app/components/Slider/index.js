@@ -22,6 +22,17 @@ export default class Slider extends React.PureComponent {
     }
   }
 
+  componentDidMount () {
+    this.autoSlide();
+  }
+
+  autoSlide = () => {
+    var _this = this;
+    setInterval(function() {
+      _this.nextImage();
+    }, 5000);
+  }
+
   renderImage =() => {
     var images = this.state.images;
     var activeIndex = this.state.activeIndex;
@@ -45,31 +56,29 @@ export default class Slider extends React.PureComponent {
         activeIndex: activeIndex + 1,
       })
     }
-    else {
-      {
-        this.setState({
-          activeIndex: 0,
-        })
-      }
+    else
+    {
+      this.setState({
+        activeIndex: 0,
+      })
     }
   }
 
   previousImage = () => {
-    var images = thisstate.images;
+    var images = this.state.images;
     var activeIndex = this.state.activeIndex;
 
-    if(activeIndex = 1 >= 0)
+    if(activeIndex - 1 >= 0)
     {
       this.setState({
-        activeIndex: activeIndex = 1,
+        activeIndex: activeIndex - 1,
       })
     }
-    else {
-      {
-        this.setState({
-          activeIndex: images.length = 1,
-        })
-      }
+    else
+    {
+      this.setState({
+        activeIndex: images.length - 1,
+      })
     }
   }
 
