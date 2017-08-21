@@ -9,15 +9,15 @@ import React from 'react';
 import './style.css';
 import './styleM.css';
 
-import LeftIcon from "react-icons/lib/fa/chevron-left";
-import RightIcon from "react-icons/lib/fa/chevron-right";
+import LeftIcon from "react-icons/lib/fa/arrow-left";
+import RightIcon from "react-icons/lib/fa/arrow-right";
 
 export default class Slider extends React.PureComponent {
 
   constructor() {
     super();
     this.state = {
-      images: ["beachdrink.jpg", "beachdock.jpg", "siestabeach.jpg", "sunsetbeach.jpg"],
+      images: ["beachdock1.jpg", "siestabeach.jpg", "beachdrink1.jpg", "sunsetbeach.jpg"],
       activeIndex:0
     }
   }
